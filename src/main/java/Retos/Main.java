@@ -61,7 +61,7 @@ public class Main {
             int tot = 0;
             int nWord = 0;
             for (int i = cont; i < sub.length; i++) {
-                if (!sub[i].isBlank() && !sub[i].isEmpty()) {
+                if (!sub[i].trim().isEmpty()) {
                     if (tline.length() + sub[i].length() + 1 > ancho) {
                         int sp = (ancho - tot)/(nWord-1);
                         int tsp = ancho - tot;
@@ -123,10 +123,10 @@ public class Main {
     public static String pedirTexto(){
         Scanner entrada = new Scanner(System.in);
         String str = "";        
-        while (str.isBlank() || str.isEmpty()) {            
+        while (str.trim().isEmpty()) {            
             System.out.print("\nIngrese un texto: ");
             str = entrada.nextLine();
-            if (str.isBlank() || str.isEmpty()) {
+            if (str.trim().isEmpty()) {
                 System.out.print("\nDato ingresado es incorrecto.");
             }
         }
